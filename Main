@@ -1,0 +1,31 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the desired pyramid height");
+        int height = 1;
+        do {
+            System.out.print("Height: ");
+            height = input.nextInt();
+        } while ((height > 8) || (height < 1));
+        pyramid(height);
+    }
+
+    static void pyramid(int h) {
+        for (int length = 1; length < h + 1; length = length + 1) {
+            for (int width = h - length; width > 0; width = width - 1) {
+                System.out.print(" ");
+            }
+            for (int x = length; x > 0; x = x - 1) {
+                System.out.print("#");
+            }
+            System.out.print(" ");
+            for (int y = length; y > 0; y = y - 1) {
+                System.out.print("#");
+            }
+            System.out.println(" ");
+        }
+    }
+}
